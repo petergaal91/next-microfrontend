@@ -1,0 +1,17 @@
+{
+  "name": "nextjs-microfrontend",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "build:widgets": "npm run build:widget -w login && npm run build:widget -w cart",
+    "dev": "npm run build:widgets && concurrently -k -n home,products,login,cart -c blue,green,yellow,magenta \"npm run dev -w home\" \"npm run dev -w products\" \"npm run dev -w login\" \"npm run dev -w cart\"",
+    "build": "npm run build:widgets && npm run build -w login && npm run build -w cart && npm run build -w home && npm run build -w products",
+    "start": "concurrently -k -n home,products,login,cart -c blue,green,yellow,magenta \"npm run start -w home\" \"npm run start -w products\" \"npm run start -w login\" \"npm run start -w cart\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "esbuild": "^0.23.1"
+  }
+}

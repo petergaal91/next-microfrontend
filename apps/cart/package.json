@@ -1,0 +1,17 @@
+{
+  "name": "cart",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build:widget && next dev -p 3003",
+    "build:widget": "node ./scripts/build-widget.mjs",
+    "watch:widget": "node ./scripts/build-widget.mjs --watch",
+    "build": "npm run build:widget && next build",
+    "start": "next start -p 3003"
+  },
+  "dependencies": {
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

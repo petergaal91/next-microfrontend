@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.history/
+apps/*/public/login-widget.js
+apps/*/public/login-widget.js.map
+apps/*/public/cart-widget.js
+apps/*/public/cart-widget.js.map
+.DS_Store
+apps/login/.env.local
